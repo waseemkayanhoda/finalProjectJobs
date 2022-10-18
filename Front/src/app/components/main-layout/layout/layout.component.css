@@ -1,0 +1,6 @@
+#layout-wrapper {
+  width: 100%;
+  min-height: 100%;
+  display: grid;
+  grid-template-rows: 0fr auto 0fr;
+}

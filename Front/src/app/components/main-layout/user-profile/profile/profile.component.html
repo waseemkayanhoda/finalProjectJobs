@@ -1,0 +1,73 @@
+<section id="profile-wrapper">
+    <div class="row">
+        <div class="container">
+            <div class="profile">
+                <div class="profile-header">
+                    <div class="profile-card">
+                        <div class="profile-img-wrapper">
+                            <div class="profile-img">
+                                <img src="assets/images/profile-img.png" alt="Profile Image">
+                            </div>
+                        </div>
+                        <div class="profile-info">
+                            <div>
+                                <ul>
+                                    <li>First Name: </li>
+                                    <li>Last Name: </li>
+                                    <li>Email: </li>
+                                    <li>Address: </li>
+                                    <li>
+                                        <span>
+                                            CV:
+                                        </span>
+                                        <div class="upload-cv-btn">
+                                            <button (click)="uploadCV()">Add new CV</button>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div>
+                                <ul>
+                                    <li>{{user.firstName}}</li>
+                                    <li>{{user.lastName}}</li>
+                                    <li>{{user.email}}</li>
+                                    <li>{{user.address}}</li>
+                                    <li>
+                                        <label *ngFor="let cv of user.pdfDocuments">
+                                            <a (click)="openCV(cv.id)">
+                                                {{ cv.filename }}
+                                            </a>
+                                            <button (click)="deleteCV(cv.id)">
+                                                <mat-icon aria-hidden="false" aria-label="delete">delete</mat-icon>
+                                            </button>
+                                        </label>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="right-side">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="profile-body">
+                    <mat-tab-group>
+                        <mat-tab>
+                            <ng-template mat-tab-label>
+                                <mat-icon aria-hidden="false" aria-label="star">star_border</mat-icon>
+                                Saved Jobs
+                            </ng-template>
+                            <app-saved-jobs [userJobs]="userJobs()" [jobsObjects]="jobsObjects"></app-saved-jobs>
+                        </mat-tab>
+                        <mat-tab>
+                            <ng-template mat-tab-label>
+                                <mat-icon aria-hidden="false" aria-label="done">done</mat-icon>
+                                Jobs Received
+                            </ng-template>
+                            <app-jobs-received [userJobs]="userJobs()" [jobsObjects]="jobsObjects"></app-jobs-received>
+                        </mat-tab>
+                    </mat-tab-group>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

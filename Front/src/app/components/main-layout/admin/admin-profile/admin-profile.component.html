@@ -1,0 +1,23 @@
+<section id="admin-profile-wrapper">
+    <div class="row">
+        <div class="container">
+            <mat-drawer-container class="admin-mat-drawer-container">
+                <mat-drawer class="admin-side-navbar" mode="side" opened>
+                    <div class="navbar-list">
+                        <ul>
+                            <li>
+                                <a routerLink="users">Users</a>
+                            </li>
+                            <li>
+                                <a routerLink="jobs">Jobs</a>
+                            </li>
+                        </ul>
+                    </div>
+                </mat-drawer>
+                <mat-drawer-content class="admin-content">
+                    <router-outlet></router-outlet>
+                </mat-drawer-content>
+            </mat-drawer-container>
+        </div>
+    </div>
+</section>

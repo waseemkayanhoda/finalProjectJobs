@@ -1,0 +1,24 @@
+#cookies-wrapper {
+  width: 100%;
+  height: 100%;
+  margin: 50px 0 50px 0;
+}
+
+#cookies-wrapper .row {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+#cookies-wrapper .row .container {
+  width: 70%;
+  display: flex;
+}
+
+.cookies-content .title {
+  margin: 0 0 20px 0;
+}
+
+.cookies-content .cookies-body p {
+  margin: 0 0 20px 0;
+}

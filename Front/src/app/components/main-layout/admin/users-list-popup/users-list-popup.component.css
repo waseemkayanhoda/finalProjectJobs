@@ -1,0 +1,8 @@
+#user-cv-list-popup {
+  width: 250px;
+  height: 250px;
+}
+
+.users-list ul {
+  list-style: decimal;
+}

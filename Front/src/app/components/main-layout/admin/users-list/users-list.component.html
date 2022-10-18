@@ -1,0 +1,11 @@
+<section id="users-list-wrapper">
+    <div class="row">
+        <div class="container">
+            <div class="users-list">
+                <div class="user-card-box" *ngFor="let user of userList">
+                    <app-user-card [user]="user"></app-user-card>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

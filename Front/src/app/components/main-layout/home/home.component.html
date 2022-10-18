@@ -1,0 +1,44 @@
+<section id="home-wrapper">
+    <div class="row">
+        <div class="container">
+            <div class="search-form-container">
+                <div class="txt">
+                    <h1>
+                        Connecting great candidates with great jobs
+                    </h1>
+                </div>
+                <div class="search-wrapper">
+                    <form [formGroup]="searchForm" class="job-search-form">
+                        <div class="grid-tile grid-top">
+                            <div class="input-group">
+                                <label for="what">What ?</label>
+                                <input formControlName="what" type="text" name="what" id="job-search-input"
+                                    placeholder="Job title, skill or company" list="job-title-data">
+                                <datalist id="job-title-data">
+                                    <option value="Software Engineer">
+                                    <option value="Hardware">
+                                    <option value="Python Developer">
+                                </datalist>
+                            </div>
+                            <div class="input-group">
+                                <label for="where">Where ?</label>
+                                <input formControlName="where" type="text" name="where" id="where-search-input"
+                                    placeholder="Town, city or postcode">
+                            </div>
+                        </div>
+                        <div class="grid-tile grid-bottom">
+                            <div class="input-group">
+                                <label for="description">Description</label>
+                                <input formControlName="description" type="text" name="description"
+                                    id="description-search-input" placeholder="">
+                            </div>
+                            <div class="search-btn-wrapper">
+                                <button class="search-btn" (click)="sendSearchData()">Search</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

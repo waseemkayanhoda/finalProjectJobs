@@ -1,0 +1,42 @@
+<section id="job-wrapper">
+    <div class="row">
+        <div class="container">
+            <div class="job-card">
+                <div class="left-side company-img">
+                    <img src="assets/images/JobzLogo1.png" alt="">
+                </div>
+                <div class="right-side job-info">
+                    <div class="job-info-header">
+                        <div class="job-title">
+                            <h3 [innerHtml]="job?.jobTitle"></h3>
+                        </div>
+                    </div>
+                    <div class="job-info-body">
+                        <div class="job-contractType">
+                            <p [innerHtml]="job?.contractType"></p>
+                        </div>
+                        <div class="job-location">
+                            <p [innerHtml]="job?.location"></p>
+                        </div>
+                        <div class="job-salary">
+                            <p [innerHtml]="job?.salary"></p>
+                        </div>
+                        <div class="job-description">
+                            <p [innerHtml]="job?.jobDescription"></p>
+                        </div>
+                    </div>
+                    <div class="send-cv-btn-wrapper" *ngIf="!isJobReceived && isUser">
+                        <button type="button" (click)="sendCV()">Send CV</button>
+                    </div>
+                </div>
+                <div class="save-job" *ngIf="isUser" (mouseover)="hover=true" (mouseout)="hover=false">
+                    <button (click)="saveJob()">
+                        <mat-icon *ngIf="!saved && !hover" aria-hidden="false" aria-label="star_outline">star_outline
+                        </mat-icon>
+                        <mat-icon *ngIf="saved || hover" aria-hidden="false" aria-label="star">star</mat-icon>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

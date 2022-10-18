@@ -1,0 +1,24 @@
+<section id="common-words-wrapper">
+    <div class="row">
+        <div class="container">
+            <div class="header">
+                <h1>Common Words</h1>
+            </div>
+            <div class="loading-container" *ngIf="isLoading">
+                <div class="loader">Loading...</div>
+            </div>
+            <div *ngIf="!isLoading" class="common-words-list">
+                <ul>
+                    <li *ngFor="let commonWord of commonWords">
+                        <h4>
+                            {{commonWord.word}}:&nbsp;
+                        </h4>
+                        <span>
+                            {{commonWord.value}}
+                        </span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>

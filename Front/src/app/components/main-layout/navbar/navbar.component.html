@@ -1,0 +1,50 @@
+<section id="navbar-wrapper">
+    <div class="row">
+        <div class="container">
+            <div class="navbar-list">
+                <ul>
+                    <li>
+                        <a routerLink="">
+                            <!-- Home -->
+                            <mat-icon aria-hidden="false" aria-label="home">home</mat-icon>
+                        </a>
+                    </li>
+                    <li>
+                        <a routerLink="about">
+                            <!-- About -->
+                            <mat-icon aria-hidden="false" aria-label="info">info</mat-icon>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="logo-wrapper">
+                <img src="/assets/images/JobzLogo1.png" alt="">
+            </div>
+            <div class="nav-profile">
+                <ul>
+                    <li *ngIf="loggedIn && isAdmin">
+                        <a routerLink="admin-profile">
+                            <mat-icon aria-hidden="false" aria-label="admin_panel_settings">admin_panel_settings
+                            </mat-icon>
+                        </a>
+                    </li>
+                    <li *ngIf="loggedIn && !isAdmin">
+                        <a routerLink="profile">
+                            <mat-icon aria-hidden="false" aria-label="profile">person_outline</mat-icon>
+                        </a>
+                    </li>
+                    <li *ngIf="!loggedIn">
+                        <a routerLink="login">
+                            <mat-icon aria-hidden="false" aria-label="profile">person_outline</mat-icon>
+                        </a>
+                    </li>
+                    <li *ngIf="loggedIn">
+                        <button (click)="logout()">
+                            <mat-icon aria-hidden="false" aria-label="profile">logout</mat-icon>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,6 @@
+1. Open Python Project in VS code
+2. Open Terminal
+3. Write command - cd .venv/Scripts/
+4. Write command - activate
+5. Back to main folder - cd.. (x2)
+6. RUN Command => python -m flask run

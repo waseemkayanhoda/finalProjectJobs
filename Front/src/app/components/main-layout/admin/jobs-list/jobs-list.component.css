@@ -1,0 +1,25 @@
+#jobz-list-wrapper {
+}
+
+#jobz-list-wrapper .row {
+}
+
+#jobz-list-wrapper .row .container {
+}
+
+.jobs-grid-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 10px;
+}
+
+.jobs-grid-list .card {
+  display: grid;
+  justify-content: space-between;
+}
+
+.jobs-grid-list .card .mat-card-content {
+  max-height: 250px;
+  overflow-y: scroll;
+}
+

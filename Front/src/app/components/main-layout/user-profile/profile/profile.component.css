@@ -1,0 +1,101 @@
+ul li {
+  list-style: none;
+  margin: 5px 0;
+}
+
+#profile-wrapper {
+  width: 100%;
+  height: 100%;
+  margin: 30px 0;
+}
+
+#profile-wrapper .row {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+#profile-wrapper .row .container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+#profile-wrapper .row .container .profile {
+  width: 70%;
+  display: grid;
+  gap: 50px;
+}
+
+#profile-wrapper .row .container .profile .profile-header {
+  /* width: 100%; */
+  border-radius: 5px;
+  -webkit-box-shadow: 0px 0px 15px 2px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 0px 15px 2px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+}
+
+.profile .profile-header .profile-card {
+  width: 100%;
+  display: grid;
+  grid-template-rows: auto auto;
+  gap: 20px;
+}
+
+.profile .profile-header .profile-card .profile-img-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.profile .profile-header .profile-card .profile-img-wrapper .profile-img {
+  width: 300px;
+  height: 300px;
+  display: flex;
+}
+
+.profile .profile-header .profile-card .profile-info {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 0.2fr 0.2fr;
+}
+
+.profile-info ul li .upload-cv-btn button {
+  background-color: transparent;
+  padding: 5px;
+  -webkit-box-shadow: 0px 0px 15px 2px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 0px 15px 2px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  border: none;
+  margin: 5px 0;
+}
+
+.profile-info ul li label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 0 6px 0;
+}
+
+.profile-info ul li label a {
+  color: #0000ff;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.profile-info ul li label a:hover {
+  text-decoration: underline;
+}
+
+.profile-info ul li label button {
+  background-color: transparent;
+  color: #ec2828;
+  border: none;
+  cursor: pointer;
+}
+
+.profile .profile-body {
+  padding: 20px;
+  border-radius: 5px;
+  -webkit-box-shadow: 0px 0px 15px 2px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 0px 15px 2px rgba(0, 0, 0, 0.2);
+}

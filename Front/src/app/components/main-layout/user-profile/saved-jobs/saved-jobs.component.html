@@ -1,0 +1,16 @@
+<section id="saved-jobs">
+    <div class="row">
+        <div class="container">
+            <div class="user-saved-jobs-wrapper" *ngIf="savedJobs.length > 0; else notFound">
+                <div *ngFor="let job of jobsObjects">
+                    <div class="job-card" *ngIf="isSaved(job)">
+                        <app-job [job]="job" [saved]="true" [isJobReceived]="isJobReceived(job)"></app-job>
+                    </div>
+                </div>
+            </div>
+            <ng-template #notFound>
+                NO DATA FOUND!
+            </ng-template>
+        </div>
+    </div>
+</section>

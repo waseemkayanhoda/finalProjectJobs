@@ -1,0 +1,25 @@
+#help-wrapper {
+    width: 100%;
+    height: 100%;
+    margin: 50px 0 50px 0;
+  }
+  
+  #help-wrapper .row {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  
+  #help-wrapper .row .container {
+    width: 70%;
+    display: flex;
+  }
+  
+  .help-content .title {
+    margin: 0 0 20px 0;
+  }
+  
+  .help-content .help-body p {
+    margin: 0 0 20px 0;
+  }
+  

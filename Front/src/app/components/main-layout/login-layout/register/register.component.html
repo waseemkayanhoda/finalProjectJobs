@@ -1,0 +1,54 @@
+<section id="register-wrapper">
+    <div class="row">
+        <div class="container">
+            <div class="register-form-wrapper">
+                <form class="register-form">
+                    <div class="register-header">
+                        <h1>Create account</h1>
+                    </div>
+                    <div [formGroup]="accountForm" class="form-inputs">
+                        <div class="input-group">
+                            <label for="firstName">First name</label>
+                            <input type="text" formControlName="firstName" name="firstName" id="firstName"
+                                placeholder="John" required>
+                        </div>
+                        <div class="input-group">
+                            <label for="lastName">Last name</label>
+                            <input type="text" formControlName="lastName" name="lastName" id="lastName"
+                                placeholder="Doe" required>
+                        </div>
+                        <div class="input-group">
+                            <label for="lastName">Address</label>
+                            <input type="text" formControlName="address" name="address" id="address"
+                                placeholder="434 Bridge St NW, MI" required>
+                        </div>
+                        <div class="input-group">
+                            <label for="email">Email</label>
+                            <input type="text" formControlName="email" name="email" id="email"
+                                placeholder="John.Doe@example.com" required>
+                        </div>
+                        <div class="input-group">
+                            <label for="password">Password</label>
+                            <input type="password" formControlName="password" name="password" id="password"
+                                placeholder="**********" required>
+                        </div>
+                    </div>
+                    <div class="response-msg">
+                        <p *ngIf="successMsg" class="success-msg">
+                            Thanks for the registration.
+                        </p>
+                        <p *ngIf="failed" class="failed-msg">
+                            Email is already registered.
+                        </p>
+                    </div>
+                    <div class="create-account">
+                        <div class="create-btn">
+                            <button type="button" [disabled]="accountForm.invalid || clicked"
+                                (click)="createAccount()">Create</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>

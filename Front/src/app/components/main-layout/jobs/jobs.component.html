@@ -1,0 +1,147 @@
+<section id="jobs-wrapper">
+    <div class="row">
+        <div class="container">
+            <div class="jobs-container">
+                <div class="jobs-header">
+                    <p>
+                        Your search returned {{jobsLength | number}} jobs
+                    </p>
+                    <div class="search-info-wordcloud">
+                        <button (click)="getCommonWords()">
+                            <mat-icon aria-hidden="false" aria-label="info">info</mat-icon>
+                        </button>
+                    </div>
+                </div>
+                <div class="jobs-body">
+                    <div class="left-side filter">
+                        <!-- New Search Filter -->
+                        <div class="search-form-wrapper">
+                            <form [formGroup]="searchForm" class="job-search-form">
+                                <div class="input-group">
+                                    <label for="what">What ?</label>
+                                    <input formControlName="what" type="text" name="what" id="job-search-input"
+                                        placeholder="Job title, skill or company">
+                                </div>
+                                <div class="input-group">
+                                    <label for="where">Where ?</label>
+                                    <input formControlName="where" type="text" name="where" id="where-search-input"
+                                        placeholder="Town, city or postcode">
+                                </div>
+                                <div class="input-group">
+                                    <label for="description">Description</label>
+                                    <input formControlName="description" type="text" name="description"
+                                        id="description-search-input" placeholder="">
+                                </div>
+                                <div class="search-btn-wrapper">
+                                    <button class="search-btn" (click)="getJobsBySearchParams()">Search</button>
+                                </div>
+                            </form>
+                        </div>
+                        <!-- Type of company -->
+                        <div class="type-of-company-wrapper">
+                            <form id="typeOfCompanyForm">
+                                <div class="form-header">
+                                    <div class="title">
+                                        <p>
+                                            Type of Company
+                                        </p>
+                                    </div>
+                                    <div class="reset-btn">
+                                        <button (click)="resetForm('typeOfCompany')" type="reset">reset</button>
+                                    </div>
+                                </div>
+                                <div class="list">
+                                    <ul>
+                                        <li>
+                                            <div class="input-group">
+                                                <input (change)="filterJob($event, 'typeOfCompany')" type="radio"
+                                                    name="typeOfCompany" id="agency-company" value="Agency"
+                                                    [(ngModel)]="companyTypeFilter">
+                                                <label for="agency-company">Agency</label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="input-group">
+                                                <input (change)="filterJob($event, 'typeOfCompany')" type="radio"
+                                                    name="typeOfCompany" id="direct-employer-company"
+                                                    value="Direct Employer" [(ngModel)]="companyTypeFilter">
+                                                <label for="direct-employer-company">Direct Employer</label>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </form>
+                        </div>
+                        <!-- Jobs Types -->
+                        <div class="jobs-type-wrapper">
+                            <form id="jobTypesForm">
+                                <div class="form-header">
+                                    <div class="title">
+                                        <p>
+                                            Job types
+                                        </p>
+                                    </div>
+                                    <div class="reset-btn">
+                                        <button (click)="resetForm('jobType')" type="reset">reset</button>
+                                    </div>
+                                </div>
+                                <div class="list">
+                                    <ul>
+                                        <li>
+                                            <div class="input-group">
+                                                <input (change)="filterJob($event, 'jobType')" type="radio"
+                                                    name="jobType" id="permanent-jobType" value="permanent"
+                                                    [(ngModel)]="jobTypeFilter">
+                                                <label for="permanent-jobType">Permanent</label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="input-group">
+                                                <input (change)="filterJob($event, 'jobType')" type="radio"
+                                                    name="jobType" id="work-from-home-jobType" value="Work From Home"
+                                                    [(ngModel)]="jobTypeFilter">
+                                                <label for="work-from-home-jobType">Work From Home</label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="input-group">
+                                                <input (change)="filterJob($event, 'jobType')" type="radio"
+                                                    name="jobType" id="temporary-jobType" value="temporary"
+                                                    [(ngModel)]="jobTypeFilter">
+                                                <label for="temporary-jobType">Temporary</label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="input-group">
+                                                <input (change)="filterJob($event, 'jobType')" type="radio"
+                                                    name="jobType" id="contract-jobType" value="contract"
+                                                    [(ngModel)]="jobTypeFilter">
+                                                <label for="contract-jobType">Contract</label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="input-group">
+                                                <input (change)="filterJob($event, 'jobType')" type="radio"
+                                                    name="jobType" id="part-time-jobType" value="Part Time"
+                                                    [(ngModel)]="jobTypeFilter">
+                                                <label for="part-time-jobType">Part Time</label>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div *ngIf="!isLoading" class="right-side jobs">
+                        <app-job *ngFor="let job of jobsByPage" [job]="job" [saved]="isJobSaved(job.id)"
+                            [isJobReceived]="isJobReceived(job.id)"></app-job>
+
+                        <mat-paginator [length]="jobs.length" [pageSize]="10" [pageSizeOptions]="[10, 20, 30]"
+                            (page)="onPageChange($event)">
+                        </mat-paginator>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

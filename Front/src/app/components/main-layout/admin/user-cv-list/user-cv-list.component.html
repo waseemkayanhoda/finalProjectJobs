@@ -1,0 +1,18 @@
+<section id="user-cv-list-popup">
+    <div class="row">
+        <div class="container">
+            <div class="cv-list">
+                <h2>{{ fullname }}</h2>
+                <div class="user-pdf-list">
+                    <ul>
+                        <li *ngFor="let pdf of pdfDocsList">
+                            <a (click)="openCV(pdf.id)">
+                                {{ pdf.filename }}
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

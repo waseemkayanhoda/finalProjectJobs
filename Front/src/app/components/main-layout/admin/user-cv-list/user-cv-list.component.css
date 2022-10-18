@@ -1,0 +1,25 @@
+#user-cv-list-popup {
+  width: 300px;
+  min-height: 200px;
+}
+
+#user-cv-list-popup .row {
+  width: 100%;
+  display: flex;
+  padding: 20px;
+}
+
+.cv-list h2 {
+  margin: 0 0 10px 0;
+}
+
+.user-pdf-list ul {
+  list-style: none;
+}
+.user-pdf-list ul li {
+  margin: 0 0 5px 0;
+}
+.user-pdf-list ul li a {
+  color: blue;
+  cursor: pointer;
+}

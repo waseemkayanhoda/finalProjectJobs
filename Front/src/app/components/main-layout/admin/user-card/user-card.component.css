@@ -1,0 +1,53 @@
+#user-card-wrapper {
+  width: 100%;
+  height: 250px;
+  max-height: 250px;
+}
+
+#user-card-wrapper .row {
+  width: 100%;
+  height: 100%;
+}
+
+#user-card-wrapper .row .container {
+  width: 100%;
+  height: 100%;
+}
+
+#user-card-wrapper .row .container {
+  width: 100%;
+  height: 100%;
+}
+
+#user-card-wrapper .row .container .card {
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  display: grid;
+  gap: 10px;
+  grid-template-rows: 1fr 1fr 1fr;
+}
+
+#user-card-wrapper .row .container .card .header-image {
+  background-image: url("src/assets/images/profile-img.png");
+  background-size: cover;
+}
+
+#user-card-wrapper .row .container .card .card-content .profile-info {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.card .card-content .profile-info ul {
+  list-style: none;
+}
+
+.card .card-content .profile-info ul li label {
+  display: block;
+}
+
+.card .card-content .profile-info ul li label a {
+  color: #000;
+  cursor: pointer;
+}

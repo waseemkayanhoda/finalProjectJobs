@@ -1,0 +1,18 @@
+<section id="user-cv-list-popup">
+    <div class="row">
+        <div class="container">
+            <div class="users-list" *ngIf="users.length > 0; else noUsersFound">
+                <ul>
+                    <li *ngFor="let user of users">
+                        <h3>
+                            {{user.firstName}}&nbsp;{{user.firstName}}
+                        </h3>
+                    </li>
+                </ul>
+            </div>
+            <ng-template #noUsersFound>
+                <h1>NO Users Found!</h1>
+            </ng-template>
+        </div>
+    </div>
+</section>

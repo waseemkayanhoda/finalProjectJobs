@@ -1,0 +1,38 @@
+<section id="send-cv-popup">
+    <div class="row">
+        <div class="container">
+            <div class="cv-form">
+                <h2>{{ title }}</h2>
+                <form #cvForm="ngForm">
+                    <div class="user-pdf-list" *ngIf="isSend">
+                        <label class="subtitle">Choose CV:</label>
+                        <ul>
+                            <li *ngFor="let pdf of userPdfDocs">
+                                <input type="radio" name="cv-option" [value]="pdf.id" [id]="pdf.id"
+                                    (input)="selectCV($event)">
+                                <label [for]="pdf.id">{{ pdf.filename }}</label>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="input-group">
+                        <label class="subtitle" for="cvFile">Upload new CV:</label>
+                        <input type="file" name="cvFile" id="cvFile" accept=".pdf" (change)="selectFile($event)"
+                            [disabled]="isSelected">
+                    </div>
+                    <div class="msg" *ngIf="fileError.status">
+                        {{fileError.msg}}
+                    </div>
+                    <div class="msg" *ngIf="displayMsg">
+                        {{msg}}
+                    </div>
+                    <div class="send-btn">
+                        <button [disabled]="!isSelected" (click)="cvOption()">{{ btnValue }}</button>
+                    </div>
+                    <div class="reset-link-btn">
+                        <button type="reset" (click)="resetForm(); cvForm.resetForm()">reset</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>

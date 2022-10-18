@@ -1,0 +1,9 @@
+#saved-jobs {
+  width: 100%;
+  padding: 20px;
+}
+
+.user-saved-jobs-wrapper {
+  display: grid;
+  gap: 20px;
+}

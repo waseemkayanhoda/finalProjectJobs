@@ -1,0 +1,48 @@
+<section id="login-wrapper">
+    <div class="row">
+        <div class="container">
+            <div class="login-form-wrapper">
+                <form [formGroup]="signinForm" class="login-form">
+                    <div class="login-header">
+                        <h1>Login</h1>
+                    </div>
+                    <div class="form-inputs">
+                        <div class="input-group">
+                            <label for=""></label>
+                            <input type="text" formControlName="email" name="email" id="email" placeholder="Email"
+                                required>
+                        </div>
+                        <div class="input-group">
+                            <input type="password" formControlName="password" name="password" id="password"
+                                placeholder="Password" required>
+                        </div>
+                        <div class="err-msg" *ngIf="errorMsg">
+                            <p>
+                                email or password is incorrect
+                            </p>
+                        </div>
+                    </div>
+                    <div class="forgot-password">
+                        <a routerLink="/reset-password">
+                            <span>
+                                Forgot your password?
+                            </span>
+                        </a>
+                    </div>
+                    <div class="signin">
+                        <div class="signin-btn">
+                            <button type="button" (click)="signin()" [disabled]="signinForm.invalid">Sign In</button>
+                        </div>
+                        <div class="create-accout">
+                            <a routerLink="/register">
+                                <span>
+                                    Create account
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>

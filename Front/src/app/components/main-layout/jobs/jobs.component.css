@@ -1,0 +1,159 @@
+#jobs-wrapper {
+  width: 100%;
+  margin: 50px 0;
+}
+
+#jobs-wrapper .row {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+#jobs-wrapper .row .container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+#jobs-wrapper .row .container .jobs-container {
+  width: 70%;
+}
+
+#jobs-wrapper .row .container .jobs-container .jobs-header {
+  margin: 0 0 10px 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+#jobs-wrapper .row .container .jobs-container .jobs-header p {
+  font-weight: 500;
+}
+
+#jobs-wrapper .row .container .jobs-container .jobs-header .search-info-wordcloud {}
+
+#jobs-wrapper .row .container .jobs-container .jobs-header .search-info-wordcloud button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+#jobs-wrapper .row .container .jobs-container .jobs-body {
+  display: grid;
+  grid-template-columns: 0.3fr 1fr;
+  gap: 10px;
+}
+
+.jobs-container .jobs-body .filter {
+  height: fit-content;
+  position: sticky;
+  top: 20px;
+  padding: 10px;
+  display: grid;
+  align-content: start;
+  gap: 20px;
+  border-radius: 5px;
+  -webkit-box-shadow: 0px 0px 15px 2px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 0px 15px 2px rgba(0, 0, 0, 0.2);
+}
+
+.jobs-container .jobs-body .jobs {
+  display: grid;
+  gap: 20px;
+}
+
+.filter ul li {
+  list-style: none;
+}
+
+.filter .search-form-wrapper,
+.filter .type-of-company-wrapper,
+.filter .jobs-type-wrapper {
+  padding: 10px;
+  border-radius: 5px;
+  -webkit-box-shadow: 0px 0px 15px 2px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 0px 15px 2px rgba(0, 0, 0, 0.2);
+}
+
+.filter .search-form-wrapper .job-search-form {
+  display: grid;
+  gap: 10px;
+}
+
+.filter .search-form-wrapper .input-group {
+  width: 100%;
+}
+
+.filter .search-form-wrapper .input-group label {
+  display: block;
+}
+
+.filter .search-form-wrapper .input-group input {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  -webkit-box-shadow: 0px 0px 15px 2px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 0px 15px 2px rgba(0, 0, 0, 0.2);
+}
+
+.filter .search-form-wrapper .search-btn-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.filter .search-form-wrapper .search-btn-wrapper .search-btn {
+  border: none;
+  background-color: transparent;
+  padding: 10px;
+  border-radius: 5px;
+  -webkit-box-shadow: 0px 0px 15px 2px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 0px 15px 2px rgba(0, 0, 0, 0.2);
+}
+
+.filter .type-of-company-wrapper .form-header,
+.filter .jobs-type-wrapper .form-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.filter .type-of-company-wrapper .form-header .title,
+.filter .jobs-type-wrapper .form-header .title {
+  margin: 0 0 10px 0;
+}
+
+.filter .type-of-company-wrapper .form-header .reset-btn button,
+.filter .jobs-type-wrapper .form-header .reset-btn button {
+  background-color: transparent;
+  border: none;
+  color: blue;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.filter .list ul li input[type="radio"] {
+  display: none;
+}
+
+.filter .type-of-company-wrapper .list ul li :first-child,
+.filter .jobs-type-wrapper .list ul li:not(:last-child) {
+  margin: 0 0 10px;
+}
+
+.filter .list ul li label {
+  display: block;
+  padding: 10px;
+  border-radius: 5px;
+  -webkit-box-shadow: 0px 0px 15px 2px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 0px 15px 2px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+.filter .list ul li label:hover {
+  background-color: #cecece;
+}
+
+.filter .list ul li input[type="radio"]:checked~label {
+  background-color: #cecece;
+}

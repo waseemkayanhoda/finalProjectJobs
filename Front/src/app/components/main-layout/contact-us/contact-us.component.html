@@ -1,0 +1,35 @@
+<section id="contact-us-wrapper">
+    <div class="row">
+        <div class="container">
+            <div class="contact-form-wrapper">
+                <form [formGroup]="contactForm" class="contact-form">
+                    <div class="input-group">
+                        <label for="fullName">Full Name:</label>
+                        <input formControlName="fullName" type="text" name="fullName" id="fullName-input"
+                            placeholder="John Doe">
+                    </div>
+                    <div class="input-group">
+                        <label for="email">Email:</label>
+                        <input formControlName="email" type="text" name="email" id="email-input"
+                            placeholder="john@example.com">
+                    </div>
+                    <div class="input-group">
+                        <label for="phoneNumber">Phone:</label>
+                        <input formControlName="phoneNumber" type="text" name="phoneNumber" id="phone-input"
+                            placeholder="055-555-5555">
+                    </div>
+                    <div class="form-bottom">
+                        <div class="msg" *ngIf="isMsg">
+                            <p>
+                                {{msg}}
+                            </p>
+                        </div>
+                        <div class="send-btn-wrapper">
+                            <button class="send-btn" (click)="send()">Search</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
